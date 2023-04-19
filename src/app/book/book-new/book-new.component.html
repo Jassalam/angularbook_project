@@ -1,0 +1,47 @@
+<form [formGroup]="myBook" class="w-50 m-auto" (ngSubmit)="createBook()">
+    <h1>Create New Book</h1>
+
+       
+
+      <div class="form-group mb-5">
+        <label class="form-label"><span>ISBN</span></label>
+        <input type="text" class="form-control" formControlName ="isbn">
+        <small
+        *ngIf="myBook.get('isbn')?.dirty && myBook.get('isbn')?.hasError('required')">
+        Please insert an ISBN.
+      </small>
+    </div>
+    <div><br></div>
+    <div class="form-group mb-4">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" formControlName ="title">
+        <small
+        *ngIf="myBook.get('title')?.dirty && myBook.get('title')?.hasError('required')">
+        Please insert a Title of Book.
+      </small>
+    </div>
+    <div><br></div>
+    <div class="form-group mb-4">
+        <label class="form-label">Author</label>
+        <input type="text" class="form-control" formControlName ="author">
+        <small
+        *ngIf="myBook.get('author')?.dirty && myBook.get('author')?.hasError('required')">
+        Please insert Author Name.
+      </small>
+    </div>
+    <div><br></div>
+    <div class="form-group mb-4">
+        <label class="form-label">Cover</label>
+        <input type="text" class="form-control" formControlName ="cover">
+        
+    </div>
+   
+    <div><br></div>
+    <div class="form-group mb-4">
+        <label class="form-label">Absctract</label>
+        <input type="text" class="form-control" formControlName ="abstract">
+        
+    </div>
+    <div><br></div>
+    <button class="btn btn-success" [disabled]="myBook.invalid">Create Book</button>
+</form>

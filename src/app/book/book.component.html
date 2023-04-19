@@ -1,6 +1,6 @@
 <h1>{{title}} app is running !</h1>
 <input type="search" (input)="updateSearchBook($event)"/>
-<app-book-card *ngFor="let book of books | bookFilter: bookSearchTerm" 
+<app-book-card *ngFor="let book of books$ | async" 
 [content]="book" 
-(detailClick)="handleEmitFromChild($event)">
+(detailClick)="goToBookDetails($event)">
 </app-book-card>

@@ -1,0 +1,37 @@
+
+<form #form="ngForm" *ngIf="book$ | async as book">
+    <h1>Edit Book</h1>
+    <p>
+        <label for="title">Book Title </label>
+        <input type="text"
+        [(ngModel)]="book.title" name="title" #title="ngModel">
+      </p>
+     
+      <p>
+        <label for="author">Author </label>
+        <input type="text"
+        [(ngModel)]="book.author" name="author" #title="ngModel">
+      </p>
+     
+      <p>
+        <label for="abstract">Abstract </label>
+        <input type="textarea"
+        [(ngModel)]="book.abstract" name="abstract" #title="ngModel">
+      </p>
+     
+      <p>
+        <label for="isbn">ISBN </label>
+        <input type="text"
+        [(ngModel)]="book.isbn" name="isbn" #title="ngModel">
+      </p>
+     
+      <p>
+        <label for="cover">Book Cover </label>
+        <input type="text"
+        [(ngModel)]="book.cover" name="cover" #title="ngModel">
+      </p>
+     
+      <p>
+        <button (click)="onSaveChange(book)">Chnage Save</button>
+      </p>
+</form>
